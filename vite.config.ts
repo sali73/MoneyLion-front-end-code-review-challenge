@@ -6,10 +6,9 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    server: {
-      deps: {
-        inline: true, // 100% Fix: Forces Vitest to compile all node_modules packages
-      },
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
     },
   },
 });
